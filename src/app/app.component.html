@@ -1,0 +1,34 @@
+<!-- <button (click)="click()">click</button>
+<div *ngIf="checkElement == true">
+    <app-spreadsheet #sheet></app-spreadsheet>
+</div> -->
+<!-- <button nz-button nzType="primary" (click)="showModal()">
+    <span>Show Modal</span>
+  </button>
+  <nz-modal
+    [nzStyle]="{width: 'auto', height: 'auto'}"
+    [(nzVisible)]="isVisible"
+    nzTitle=''
+    (nzOnCancel)="handleCancel()"
+    (nzOnOk)="handleOk()"
+    [nzOkLoading]="isOkLoading"
+  >
+    <p *nzModalContent><app-spreadsheet></app-spreadsheet></p>
+  </nz-modal> -->
+
+
+  <button nz-button nzType="primary" (click)="open()">Open</button>
+  <nz-drawer
+      [nzClosable]="false"
+      [nzVisible]="visible"
+      [nzPlacement]="placement"
+      [nzHeight] = '700'
+      nzTitle="Basic Drawer"
+      (nzOnClose)="close()"
+    >
+      <ng-container *nzDrawerContent>
+        <div class = "px-3 ng-star-inserted">
+            <app-spreadsheet></app-spreadsheet>
+        </div>
+      </ng-container>
+    </nz-drawer>
