@@ -1,22 +1,3 @@
-<!-- <button (click)="click()">click</button>
-<div *ngIf="checkElement == true">
-    <app-spreadsheet #sheet></app-spreadsheet>
-</div> -->
-<!-- <button nz-button nzType="primary" (click)="showModal()">
-    <span>Show Modal</span>
-  </button>
-  <nz-modal
-    [nzStyle]="{width: 'auto', height: 'auto'}"
-    [(nzVisible)]="isVisible"
-    nzTitle=''
-    (nzOnCancel)="handleCancel()"
-    (nzOnOk)="handleOk()"
-    [nzOkLoading]="isOkLoading"
-  >
-    <p *nzModalContent><app-spreadsheet></app-spreadsheet></p>
-  </nz-modal> -->
-
-
   <button nz-button nzType="primary" (click)="open()">Open</button>
   <nz-drawer
       [nzClosable]="false"
@@ -27,8 +8,14 @@
       (nzOnClose)="close()"
     >
       <ng-container *nzDrawerContent>
-        <div class = "px-3 ng-star-inserted">
-            <app-spreadsheet></app-spreadsheet>
+        <div>
+          <input type="file" (change)="onFileChange($event)" multiple="false" />
+          
+          <button (click)="export()">Export!</button>
         </div>
+        <div>
+          <app-spreadsheet #sheet ></app-spreadsheet>
+      </div>
+      
       </ng-container>
     </nz-drawer>
